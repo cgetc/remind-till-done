@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Welcome{{ block.super }}{% endblock %}
+{% block content %}
+    <div class="container">
+        <p>
+            <h1>Remind Till Done</h1>
+            A Slack App to add reminders to members of channels.<br>
+            <br>
+            <a href="https://slack.com/oauth/authorize?client_id=10710625568.242088834755&scope=reminders:write,groups:read,commands,channels:read,team:read"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+        </p>
+        <p>
+            <h2>How to use</h2>
+            <code>/remind-till-done</code> command add a <em>Done</em> button to the channel,<br>
+            and add reminders to members of the channel.<br>
+            Press the <em>Done</em> button then remove the reminder.<br>
+            <br>
+            <h3>reminding time</h3>
+            To set the reminder time, send command with a string like “Today is January 1, 2047 at 8:21:00AM”.<br>
+            If it is invalid or nothing, set tomorrow at the time.
+        </p>
+    </div>
+{% endblock %}

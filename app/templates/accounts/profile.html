@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Setup{{ block.super }}{% endblock %}
+{% block content %}
+    <div class="container">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if form.errors %}
+            {{ form.errors.as_ul }}
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.timezone }}
+            <input type="submit" value="save">
+        </form>
+    </div>
+{% endblock %}
